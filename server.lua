@@ -1,13 +1,19 @@
+local QBcore = exports['qb-core']:GetCoreObject() -- Change this to your core object
 RegisterCommand(ServerConfig.ShowCommand, function(source, args, rawcmd)
     TriggerClientEvent("antiCL:show", source)
 end)
 
 local function PlayerIdentifier(player)
+    local src = player
+    local Player = QBcore.Functions.GetPlayer(src)
+    if Player == nil then return "None" end
+    if (ServerConfig.Identifier == "name") then
+        return Player.PlayerData.name
+    end
     local identifier = "None"
     for k, v in ipairs(GetPlayerIdentifiers(player)) do
         if v:match(ServerConfig.Identifier..":") then
             identifier = v
-            break
         end
     end
     return identifier

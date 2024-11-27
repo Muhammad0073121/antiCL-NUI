@@ -1,6 +1,6 @@
 Config = {}
 
-Config.DrawingTime = 25*1000
+Config.DrawingTime = 60*1000
 Config.Default3DTextEnabled = true
 Config.Colours = {
     PlayerInfo = {
@@ -15,7 +15,7 @@ Config.Colours = {
     } -- (Player Left Game)
 }
 Config.AutoDisableDrawing = true
-Config.AutoDisableDrawingTime = 25*1000
+Config.AutoDisableDrawingTime = 60*1000
 Config.Translation = {
     left_game_text = "Player Left Game",
     reason_text = "Reason"
